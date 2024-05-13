@@ -1,0 +1,53 @@
+public class palindromeArray_innew 
+	{
+		int i,j;
+			public void pal()
+		{
+				 	
+		 int a[] = {123,121,456,454,909,890};
+		int  b[]=new int[a.length];
+			
+			for(i=0;i<a.length;i++)
+			{
+				System.out.println(a[i]);
+			}
+			 System.out.println("palindrome in array");
+			for(i=0;i<a.length;i++)
+			{
+				int temp=a[i];
+				int rem,rev=0;
+				int c=0;
+				while(temp!=0)
+				{
+					
+					
+					rem=temp%10;
+					rev=rev*10+rem;
+					temp=temp/10;
+					
+				}
+					
+				if(a[i]==rev)
+				{
+					
+				 System.out.println( a[i]);
+					 b[j]=a[i];
+					 j++;
+				} 
+				
+	       	}
+			for(i=0;i<b.length;i++)
+			{
+				System.out.println(b[i]);
+			}
+			
+		}
+		
+
+		public static void main(String[] args)
+		{
+			palindromeArray_innew ob= new palindromeArray_innew();
+			ob.pal();
+		}
+
+}
