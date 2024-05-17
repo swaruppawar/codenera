@@ -1,0 +1,17 @@
+ public class overloding {
+	public void name() {
+		System.out.println("No args");
+	}
+	public void name(String name) {
+		System.out.println("name:-"+name);
+	}
+	public void name(int num) {
+		System.out.println("intiger:"+num);
+	}
+public static void main(String[] args) {
+	overloding ob=new overloding();
+	ob.name();
+	ob.name("s");
+	ob.name(12);
+}
+}

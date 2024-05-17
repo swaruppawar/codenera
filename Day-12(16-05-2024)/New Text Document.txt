@@ -1,0 +1,5 @@
+Arrays class:
+
+The Arrays class in java.util package is a utility class that provides various static
+methods which is helpful to forms various utility methods on the normal array in java.
+for example, printing array’s elements, sorting an array, searching any elements from an

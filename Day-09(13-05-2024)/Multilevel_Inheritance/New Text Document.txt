@@ -1,0 +1,7 @@
+package Day9;
+
+public class Electriccar extends car{
+    public void show(){
+        System.out.println(" This is your Normal : ___Electriccar___");
+    }
+}

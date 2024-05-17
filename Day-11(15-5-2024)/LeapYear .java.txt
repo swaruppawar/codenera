@@ -1,0 +1,31 @@
+package Day11;
+
+import java.util.Scanner;
+
+public class LeapYear {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter The year :");
+        int s = sc.nextInt();
+
+        if (((s % 4==0) && (s%100!=0)) ||(s%400==0))
+                System.out.println(s + "is a leap year");
+            else
+                System.out.println(s + "is NOT t a leap year");
+
+        }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

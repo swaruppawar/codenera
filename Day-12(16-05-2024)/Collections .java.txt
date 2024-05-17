@@ -1,0 +1,4 @@
+Collections class:
+This class belongs to java.util package, it is also a utility class that provides several
+static utility methods to perform various utility operations on the collection of objects
+like searching, sorting, reversing a collection of objects

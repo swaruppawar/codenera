@@ -1,0 +1,28 @@
+	
+public class frequnce_string {
+public static void main(String[] args) {
+		 String s="hello java";
+			char a[]=s.toCharArray();
+			int p[]=new int[s.length()];
+			int ind=-1;
+			for (int i = 0; i < a.length; i++) {
+				int count=1;
+				for (int j = i+1; j < a.length; j++) {
+					if(a[i]==a[j]) {
+						count++;
+						p[j]=ind;
+					}
+				}
+				if(p[i]!=ind) {
+					p[i]=count;
+				}
+			}
+			System.out.println("frequence is");
+	  for (int i = 0; i < p.length; i++) {
+			if(p[i]!=ind) {
+				System.out.println(a[i]+"     "+p[i]);
+			}
+		}
+    }
+}
+

@@ -1,0 +1,6 @@
+package Practices;
+
+public interface collage {
+    void display();
+    int showRollNo();
+}

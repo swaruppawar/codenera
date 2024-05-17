@@ -1,0 +1,11 @@
+Strings in Java____
+
+  Strings are used in Java to store a sequence of character values. They are treated as objects in the Java programming language. We have various options to create and manipulate strings.
+  String sentence = “Hello, world!”;
+
+StringBuffer():
+String Buffer is a class modification used in Java to add more functionality to the strings by giving characteristics like mutability. We can use methods like append(), insert(), reverse(), replace(), etc. to modify strings. StringBuffer has four defined constructors; 
+
+StringBuilder():
+StringBuilder in Java is a sequence of mutable characters. StringBuilder provides an alternate class to make strings that can be modified as we know that strings are immutable. It is very similar to StringBuffer, but where these two differ is in the synchronization. StringBuilder is not synchronized, which in turn means it is not thread-safe. StringBuilder also has four defined constructors; 
+
