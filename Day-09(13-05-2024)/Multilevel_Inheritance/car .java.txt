@@ -1,0 +1,11 @@
+package Day9;
+
+public class car extends  vehical{
+
+
+        public void show(){
+            System.out.println("This is your Normal : __car__");
+
+
+    }
+}

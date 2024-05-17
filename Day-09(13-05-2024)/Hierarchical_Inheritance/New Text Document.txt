@@ -1,0 +1,7 @@
+package Day9.Hierarchical_inheritance;
+
+public class Tiger {
+    public  void sleep(){
+        System.out.println("Tiger is sleeping");
+    }
+}

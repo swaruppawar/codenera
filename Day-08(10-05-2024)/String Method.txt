@@ -1,0 +1,125 @@
+ **  String Method in Java-----------------------------  **
+
+    package StringProgramRevision;
+
+import java.sql.SQLOutput;
+import java.util.Scanner;
+
+public class method {
+    public static void main(String[] args) {
+//        char[] ch={'j','a','v','a','t','p','o','i','n','t'};
+//        String s=new String(ch);
+
+// Char At Method
+
+//        String var = "Mayuresh Chandrakant Chavan";
+//        Scanner sc = new Scanner(System.in);
+//        System.out.print("Enter A number which u check position :  ");
+//        int a= sc.nextInt();
+//        char result = var.charAt(a);
+////       System.out.print("the Number At "+a+"position is: " + result);
+
+//        String var="Sangita Chavan";
+//        int result=var.codePointAt(2);
+//        System.out.println(result);
+
+//------------------- String compareTo() Method____________-
+//   String a1="Hello";
+//   String  a2="Hello";
+//  System.out.println(a1.compareTo(a2));
+
+//-----------compareToIgnoreCase() Method------------------------
+//        String a1="Hello";
+//        String a2="Hello java";
+//        System.out.println(a1.compareToIgnoreCase(a2));
+
+// -----------concat() Method-------------
+//        String s1="Mayuresh";
+//        String s2="  Chavan";
+//        System.out.println(s1.concat(s2));
+
+//-----------------contains() Method----------
+//    String s1="Mayuresh Chavan";
+//    System.out.println(s1.contains("M"));
+//    System.out.println(s1.contains("a"));
+//-----contentEquals() Method----------
+//        String s1="Mayuresh";
+//        System.out.println(s1.contentEquals("Mayuresh"));
+
+//---------copyValueOf() Method----------
+
+//         char[] s1={'m','a','y','u','r','e','s','h'};
+//         String s2="";
+//         s2=s2.copyValueOf(s1,0,7);
+//         System.out.println(s2);
+//        String s1="Mayuresh";
+//        System.out.println(s1.endsWith("resh"));
+//        System.out.println(s1.endsWith("h"));
+//        System.out.println(s1.endsWith("sh"));
+//        System.out.println(s1.endsWith("res"));
+//        System.out.println(s1.endsWith("reh"));
+
+//--------------equals() Method-----------
+//        String s1="Hello";
+//        String s2="Hello ";
+//        String s3="Another String";
+//      System.out.println(s1.equals(s2));
+//      System.out.println(s1.equals(s3));
+
+//-----------equalsIgnoreCase() Method------------
+//     String s1="hello";
+//     String s2="Hello";
+//     String s3="Antother string"
+
+ //------------gethashcode----------
+
+//    String s1="mayuresh";
+//    System.out.println(s1.hashCode());
+
+//------------indexOf() Method-------
+ //       String s1="hello i am a java developer";
+//        System.out.println(s1.indexOf("h"));
+//
+//        String s1="mayuresh chavan";
+//        String s2="mayuresh  chavan";
+//        System.out.println(s1==s2);
+
+//-----------isEmpty() Metho-----------
+//        String s1=" Mayuresh ";
+//        String s2=" ";
+//        System.out.println(s1.isBlank());
+//        System.out.println(s2.isEmpty());
+//        System.out.println(s1.length());
+////
+////------------length() Method-----------------
+//        String s1="Mayuresh";
+//        System.out.println(s1.length());
+
+//--------replace() Method----------
+        String s1="Hello java";
+       System.out.println(s1. replace('1' , 'p'));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}}
