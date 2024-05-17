@@ -1,17 +1,49 @@
-package Day3;
+package Arraycode;
 
-public class FindSecondlargest {
+import java.util.Scanner;
+	
+	public class Sec_largest 
+	{
+		
+		int a[];
+		Scanner sc= new Scanner(System.in);
+		public void input()
+		{
+		  System.out.print("enter size:- ");
+		  int size=sc.nextInt();
+		  a=new int[size];
+		  int max=a[0];
+		  int sec_max=a[0];
+		  
+		  for(int i=0;i<a.length;i++)
+		  {
+			  a[i]=sc.nextInt();
+		  }
+	       		
+			for(int  i=0;i<a.length;i++)
+			{
+				if(a[i]>max)
+				{
+					sec_max=max;
+					max=a[i];
+				}
+				
+				else if(a[i]>sec_max && a[i]!=max)
+				{
+					sec_max=a[i];
+				}
+			}
+			System.out.println("second largest element ="+sec_max);
+		}
+		
+		
+		
+		
+		public static void main(String[]args)
+		{
+			Sec_largest ob= new Sec_largest();
+			ob.input();
+			
+		}
 
-        public static void main(String[] args) {
-
-
-            int a = 8, b = 4, c = -5;
-
-            int largest = (a > b) ? ((a > c) ? a : c) : ((b > c) ? b : c);
-
-            int second_largest = (largest ==a) ? (b>c ? b:c):((largest==b) ? (a>c ? a:c):(a>b ? a:b));
-
-            System.out.println("Second Largest Number is : " + second_largest);
-        }
-    }
-
+}
