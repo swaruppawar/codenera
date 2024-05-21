@@ -1,31 +1,32 @@
 package Day11;
 
-import java.sql.SQLOutput;
+import java.lang.annotation.Target;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.util.Locale;
+import java.time.format.DateTimeFormatter;
 
-public class DataAndTime {
-    public static void main(String[] args) {
+public class DateAndTime {
+	public static void main(String[] args) {
+		LocalDate localDate=LocalDate.now();
+		System.out.println(localDate);
+		
+		String s="1998-03-08";
+		DateTimeFormatter dateTimeFormatter=DateTimeFormatter.ofPattern("dd-MM-yyyy");
+		LocalDate localDate2=LocalDate.now();
+		String s1=localDate.format(dateTimeFormatter);
+		System.out.println(s1);
+		LocalDate localDate3=LocalDate.parse(s);
+		String s2=localDate3.format(dateTimeFormatter);
+		System.out.println(s2);
+		System.out.println(localDate3.isLeapYear());
+		
+		
+	    
+	    
+	    
+	}
 
-// ________date Print_______-
-        LocalDate date=LocalDate.now();
-        System.out.println("The Current Data is :" +date);
-        System.out.println("____________________________");
-
-//---------Current Time__________
-        LocalTime time=LocalTime.now();
-        System.out.println("The Current Data is :" +time);
-        System.out.println("____________________________");
-//___________current time and date combined--------------
-        LocalDateTime current=LocalDateTime.now();
-        System.out.println("current date and time : "+ current);
-        System.out.println("____________________________");
-
-
-
-
+}
 
 
 

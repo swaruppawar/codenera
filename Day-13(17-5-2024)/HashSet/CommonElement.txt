@@ -1,0 +1,20 @@
+public class CommonElement {
+public static void main(String[] args) {
+		
+		HashSet obj=new HashSet();
+		obj.add("Sayli");
+		obj.add("Shruti");
+		obj.add("Priya");
+		obj.add("Pratiksha");
+		System.out.println(obj);
+		
+		HashSet obj1=new HashSet();
+		obj1.add("Priya");
+		obj1.add("Shruti");
+		obj1.add("Neha");
+		obj1.add("Aditi");
+		System.out.println(obj1);
+		obj.retainAll(obj1);
+		System.out.println(obj);
+}
+}

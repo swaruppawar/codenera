@@ -1,0 +1,11 @@
+public class SepecificKey {
+	
+	public static void main(String[] args) {
+		HashMap <Integer,String>ob=new HashMap<Integer,String>();
+		ob.put(1, "raj");
+		ob.put(2, "Shruti");
+		ob.put(3, "Sayli");
+		System.out.println(ob);
+	}
+
+}
