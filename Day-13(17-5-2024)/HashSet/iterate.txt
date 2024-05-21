@@ -1,0 +1,23 @@
+public class iterate {
+
+	
+		public static void main(String[] args) {
+			HashSet obj=new HashSet();
+			obj.add(19);
+			obj.add(28);
+			obj.add(3);
+			obj.add(34);
+			obj.add(56);
+			obj.add(76);
+			System.out.println(obj);
+			
+			Iterator ob=obj.iterator();
+			while(ob.hasNext())
+			{
+				System.out.println(ob.next());
+			}
+			
+			
+			
+		}
+}

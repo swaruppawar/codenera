@@ -1,0 +1,26 @@
+import java.util.HashSet;
+
+public class CheckEmptyOrNot {
+
+	public static void main(String[] args) {
+		HashSet obj=new HashSet();
+		obj.add(1);
+		obj.add(2);
+		obj.add(3);
+		obj.add(4);
+		obj.add(5);
+		obj.add(6);
+		System.out.println(obj);
+		obj.clear();
+		System.out.println(obj);
+		if(obj.isEmpty())
+		{
+			System.out.println("Empty");
+		}
+		else
+		{
+			System.out.println("Not Empty");
+		}
+		
+}
+}

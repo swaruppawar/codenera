@@ -1,0 +1,17 @@
+public class Clone {
+
+	public static void main(String[] args) {
+		
+		HashSet obj=new HashSet();
+		obj.add(1);
+		obj.add(2);
+		obj.add(3);
+		obj.add(4);
+		System.out.println(obj);
+		obj.clone();
+		System.out.println(obj);
+		
+		
+		
+	}
+}
