@@ -1,0 +1,40 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.util.Scanner;
+
+public class batch_processing {
+public static void main(String[] args) {
+	try {
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/april_batch","root","123456");
+		String sql="insert into emp_one values (?,?,?)";
+	  	PreparedStatement ps= con.prepareStatement(sql);
+	  	while(true) {
+  	    	Scanner sc=new Scanner(System.in);
+  	    	System.out.println("Enter your id");
+  	    	int id=sc.nextInt();
+  	    	System.out.println("Enter your name");
+  	    	String name=sc.next();
+  	    	System.out.println("Enter your email");
+  	    	String email=sc.next();
+  	    	
+  	    	ps.setInt(1, id);
+  	    	ps.setString(2, name);
+  	    	ps.setString(3, email);
+  	    	
+  	    	ps.addBatch();
+  	    	System.out.println("Do you want to insert more data if yes then press y if not then press n");
+  	    	char c=sc.next().charAt(0);
+  	    	
+  	    	if(c=='n')
+  	    		break;
+  	    	
+  	    }
+  	    ps.executeBatch();
+  	    System.out.println("Your all data has been inserted");
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+}
+}

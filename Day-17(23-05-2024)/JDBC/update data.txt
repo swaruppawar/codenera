@@ -1,0 +1,38 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.util.Scanner;
+
+public class update_data {
+public static void main(String[] args) {
+	try {
+		 Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/april_batch","root","123456");
+			Scanner sc=new Scanner(System.in);
+			System.out.println("Enter id ");
+	  	    int id=sc.nextInt();
+	  	    System.out.println("Enter name");
+	  	    String name=sc.next();
+	  	    System.out.println("Enter email ");
+	  	    String email=sc.next();
+	  	  String sql="update emp_one set name=?, email_id=? where id=?";
+	  	 PreparedStatement ps= con.prepareStatement(sql);
+	  	ps.setString(1, name);
+	 	  ps.setString(2, email);
+	 	  ps.setLong(3, id); 	 
+	  	  int status=0;	 	  
+	 	  status=ps.executeUpdate();
+	 	  if(status > 0) {
+	 		  System.out.println("Your data has been updated");
+	 		  
+	 	  }
+	 	  else {
+	 		  		System.out.println("Something went Wrong");
+	 		  
+	 		   }
+
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+}
+}
