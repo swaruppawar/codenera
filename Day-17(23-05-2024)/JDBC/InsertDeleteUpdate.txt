@@ -1,0 +1,195 @@
+/*Employee Management System 
+
+1. Insert the employee data 
+2. Search the employee data 
+3. All Employee infromations 
+4. Delete the employee informations 
+5. Update the employee data 
+6. Exit 
+
+you have to design a method for each operations and call the methods on swtich case.*/
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.Scanner;
+public class emplyoeManagement_system {
+	public void insert_data()
+	{
+		try {
+			
+			
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/april_batch","root","123456");
+			String sql="insert into emp_one values(?,?,?)";
+			
+			PreparedStatement ps= con.prepareStatement(sql);
+			
+			ps.setInt(1, 106);
+			
+			ps.setString(2, "mahesh");
+			ps.setString(3, "mahesh@gmail.com");  
+			ps.executeUpdate();
+			System.out.println(" data has been add successfully.....");
+					 
+		}catch (Exception e) {
+			 e.printStackTrace();
+		}
+
+	}
+
+
+	public void search_data()
+	{
+		
+
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/april_batch","root","123456");
+			Scanner sc=new Scanner(System.in);
+			System.out.println("Enter your select id ");
+			int id=sc.nextInt();
+			String sql="select *from emp_one where id="+id;
+			PreparedStatement ps= con.prepareStatement(sql);
+			 ResultSet rs=ps.executeQuery();
+			 while(rs.next()) {
+				 System.out.println(rs.getInt(1)+"  "+rs.getString(2)+"  "+rs.getString(3));
+			 }
+		}
+		catch (Exception e) {
+	      e.printStackTrace();
+		}
+
+	}
+
+	public void all_Empinfromations ()
+	{
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/april_batch","root","123456");
+			String sql="select * from emp_one";
+			 PreparedStatement ps= con.prepareStatement(sql);
+			 ResultSet rs=ps.executeQuery();
+			 while(rs.next()) {
+				 System.out.println(rs.getInt(1)+"  "+rs.getString(2)+"  "+rs.getString(3));
+			 }
+		} catch (Exception e) {
+	       e.printStackTrace();
+		}
+	}
+
+
+	public void delete_data()
+	{
+
+		 try {
+			  Class.forName("com.mysql.cj.jdbc.Driver");
+				Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/april_batch","root","123456");
+				Scanner sc=new Scanner(System.in);
+				System.out.println("Enter your select id ");
+				int id=sc.nextInt();
+				String sql="delete from emp_one where id="+id;
+				PreparedStatement ps= con.prepareStatement(sql);
+				int st=0;
+				
+				st=ps.executeUpdate();
+				if(st>0) {
+					System.out.println("your data has been deleted");
+				}
+				else {
+					System.out.println("your data has been not found");
+				}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+
+	public void update()
+	{
+		try {
+			 Class.forName("com.mysql.cj.jdbc.Driver");
+				Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/april_batch","root","123456");
+				Scanner sc=new Scanner(System.in);
+				System.out.println("Enter id where you want to update");
+		  	    int id=sc.nextInt();
+		  	    System.out.println("Enter name");
+		  	    String name=sc.next();
+		  	    System.out.println("Enter email ");
+		  	    String email=sc.next();
+		  	  String sql="update emp_one set name=?, email_id=? where id=?";
+		  	 PreparedStatement ps= con.prepareStatement(sql);
+		  	ps.setString(1, name);
+		 	  ps.setString(2, email);
+		 	  ps.setLong(3, id);
+		 	 
+		  	  int status=0;
+		 	  
+		 	  status=ps.executeUpdate();
+		 	  if(status>0) {
+		 		  System.out.println("Your data has been updated");
+		 		  
+		 	  }
+		 	  else {
+		 		  		System.out.println("Something went Wrong");
+		 		  
+		 		   }
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public void menu()
+	{
+		System.out.println(".....MENU PROGRAM......");
+		System.out.println("1.INSERT THE EMPLOYEE DATA");
+		System.out.println("2.SEARCH THE EMPLOYEE DATA");
+		System.out.println("3.ALL EMPLOYEE INFORMATION");
+		System.out.println("4.DELETE THE EMPLOYEE DATA");
+		System.out.println("5.UPDATE THE EMPLOYEE DATA");
+		System.out.println("6.EXIT");
+
+	}
+
+
+		public static void main(String[] args) {
+	      Scanner sc= new Scanner(System.in);
+	      char ch;
+
+			do {
+			
+				emplyoeManagement_system ob= new emplyoeManagement_system();
+				ob.menu();
+				System.out.println();
+				System.out.println("You want to search Enter Your Number");
+				int n=sc.nextInt();
+				
+				if(n==1)
+				 
+					ob.insert_data();
+				 
+				if(n==2)
+				 
+					ob.search_data();
+				 
+				
+				if(n==3)
+				 
+					ob.all_Empinfromations ();
+				 
+				if(n==4)
+				
+					ob.delete_data();;
+			
+				if(n==5)
+				 	ob.update();
+				 
+				System.out.println("DO YOU WANT TO CONTINUE, PLEASE PRESS Y");
+				 ch=sc.next().charAt(0);
+				
+				
+			}while(ch=='y');
+		}
+
+}
